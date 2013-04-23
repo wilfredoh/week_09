@@ -1,0 +1,38 @@
+
+import javax.swing.JOptionPane;
+
+// ******* CLASS TYPE ***********
+
+public class RandomConstructor
+{
+    private int loBound, hiBound;
+    
+    // constructor no paramters
+  public RandomConstructor()
+  	{
+  	loBound = 1;
+  	hiBound = 10;
+  	}
+  
+    // constructor two parameters
+  public RandomConstructor(int loX, int hiX)
+     {
+  	loBound = loX;
+  	hiBound = hiX;
+     }
+  // no parameters
+  public void  getNumber()
+  	{
+     int  myrandom = loBound + (int)(Math.random() * (hiBound) );
+  	String  message1 = String.format("The Ramdom Number is= %d ", myrandom); 
+  	JOptionPane.showMessageDialog(null, message1);
+  	}
+  // get a number with paramters
+  public void  getNumber(int dlow, int dhi)
+  	{
+  	   int  myrandom = dlow + (int)(Math.random() * (dhi) );
+  		String  message1 = String.format("The Ramdom Number is= %d ", myrandom); 
+  		JOptionPane.showMessageDialog(null, message1);
+  	}
+}
+
