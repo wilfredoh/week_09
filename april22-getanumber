@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+//*****  USING THE CASSS *************
+public class displayRandom
+
+{
+ public static void main ( String[] args)
+ {
+  int lowlimit;
+  int Hilimit;
+  String answer="";  
+  do
+  {
+    
+  RandomConstructor myRamdomNumber1 = new RandomConstructor();	
+  myRamdomNumber1.getNumber(); // default constructor 
+  RandomConstructor myRamdomNumber2 = new RandomConstructor(100,123);
+  myRamdomNumber2.getNumber(); // constructopr with 2 parameters 
+  
+  // user  paramameters 
+  RandomConstructor myRamdomNumber3 = new RandomConstructor();
+   String  Lnumber = JOptionPane.showInputDialog("Enter the low Limit");
+   String  Hnumber = JOptionPane.showInputDialog("Enter the Hi Limit");
+   lowlimit = Integer.parseInt(Lnumber);
+   Hilimit = Integer.parseInt(Hnumber);
+   // call the get number 
+   myRamdomNumber3.getNumber(lowlimit, Hilimit); 
+  
+   // want to continue 
+    answer = JOptionPane.showInputDialog( null, "Would you like to play again? y/n");
+ 
+  } while (answer.equalsIgnoreCase("y"));
+  	
+  }
+}
