@@ -1,0 +1,54 @@
+
+import javax.swing.JOptionPane; // import class JoptionPane
+
+public class displayDice
+ {
+  public static void main ( String[] args)
+  {
+       int userNumber;
+       int diceNumber;
+  	String answer=""; 
+  	
+      do
+  	{
+  	  Dice mynumber = new Dice() ;  
+  	  
+  	  // for the user to guess Hi or low
+        do
+         {
+      	  String  yournumber = JOptionPane.showInputDialog("Random Guess Enter LOW=1, HI=2");
+      	  userNumber = Integer.parseInt(yournumber); // convert string to integer
+         } while ( (userNumber < 1)||( userNumber >2));
+  	    
+  	      diceNumber = mynumber.getRandom(); // roll the dice
+
+         if  ( (userNumber == 1) && ((diceNumber== 1)||(diceNumber==2 )||(diceNumber==3)) )	   
+         		   {
+  			   String  message1 = String.format("YOU GUESS LOW!!! - DICE(1-3) \n \n" +
+  			   		                            "Dice= %d  and  User Enter= %d  \n" +
+  			   		                            "for the User: pick Low=1 and Hi=2", diceNumber, userNumber ); 
+  			   JOptionPane.showMessageDialog(null, message1); 
+                 }
+         else if ( (userNumber == 2) && ((diceNumber== 4)||(diceNumber==5 )||(diceNumber==6)) )    
+  	       		{
+      	   		String  message2 = String.format("YOU GUESS HI!!! DICE(4-6) \n\n " +
+      	   										"Dice= %d  and  User Enter= %d \n" +
+      	   										"for the User: Pick Low=1 and Hi=2", diceNumber, userNumber ); 
+  				   JOptionPane.showMessageDialog(null, message2); 
+  	            }
+            else
+                 {
+       			      String  message3 = String.format("YOU DID NOT GUESS  HI/LO \n" +
+       			      		                           "for the Dice: LOW=1-3 and HI=4-6 \n"  +
+       			      		                           "for the user: Pick Low=1 and hi=2 \n \n" +
+       		                                           "You Enter=%d and Dice is= %d", userNumber, diceNumber); 
+  			      JOptionPane.showMessageDialog(null, message3); 
+                 }
+         
+       answer = JOptionPane.showInputDialog( null, "Would you like to play again? y/n");
+   
+  	} while (answer.equalsIgnoreCase("y"));
+  } // end of main
+
+ } // end of class
+
