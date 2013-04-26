@@ -1,0 +1,61 @@
+//  what i understand on this one is that we will use 2 Dices
+//  if both are  between 1-6 is a Low Call, and if both are 7-12 is a Hi Call.
+
+import javax.swing.JOptionPane; // import class JoptionPane
+
+public class multipleDice
+ {
+  public static void main ( String[] args)
+  {
+       int userNumber;
+       int diceNumber1;
+       int diceNumber2;
+  	String answer=""; 
+  	
+      do
+  	{
+  	  Dice mynumber1 = new Dice(1, 12) ; // first random dice 
+  	  Dice mynumber2 = new Dice(1, 12) ; // second radom dice
+  	  
+  	  // for the user to guess Hi or low
+        do
+         {
+      	  String  yournumber = JOptionPane.showInputDialog("Random Guess Enter LOW=1, HI=2");
+      	  userNumber = Integer.parseInt(yournumber); // convert string to integer
+         } while ( (userNumber < 1)||( userNumber >2));
+  	  
+  	  diceNumber1 = mynumber1.getRandom(); // get the first RandoM number
+  	  diceNumber2 = mynumber2.getRandom(); // get the second radom number
+       
+         if ( (userNumber == 1) && ( (diceNumber1 <= 6) && (diceNumber2 <= 6) ) )
+         		   {
+  			   String  message1 = String.format("FOR TWO DICE: Low=1-6 and  Hi=7-12 \n\n" +
+  			   		                             "You guess low!!! Both Dice are 1-6.\n \n" +
+  			   		                            " #1:Dice=%d  and  #2:Dice=%d, You Enter= %d",
+  					                            diceNumber1, diceNumber2, userNumber); 
+  			   JOptionPane.showMessageDialog(null, message1); 
+                 }
+         else if ((userNumber == 2) && ( (diceNumber1 >= 7) && (diceNumber2 >= 7) ) )
+         		   {
+      	   		String  message2 = String.format("FOR TWO DICE: Low=1-6 and  Hi=7-12 \n\n" +
+      	   										 "You guess HI!!! Both Dice are 7-12.\n \n" +
+      	   										 " #1:Dice=%d  and  #2:Dice=%d, You Enter= %d",
+      	   										 diceNumber1, diceNumber2, userNumber); 
+      	      JOptionPane.showMessageDialog(null, message2); 
+  	       	  }
+         else
+         		  {
+      	      String  message3 = String.format("FOR TWO DICE: Low=1-6 and  Hi=7-12 \n\n  " +
+      	      		                            "YOU DID NOT GUESS!!! Lo=1 or Hi=2 \n" +
+      	      		                            " #1:Dice=%d   and  #2:Dice=%d, You enter=%d" ,
+      	      		                            diceNumber1, diceNumber2, userNumber);
+      	      JOptionPane.showMessageDialog(null, message3); 
+         		  }
+  
+       answer = JOptionPane.showInputDialog( null, "Would you like to play again? y/n");
+   
+  	} while (answer.equalsIgnoreCase("y"));
+  } // end of main
+
+ } // end of class
+
