@@ -1,0 +1,28 @@
+// ******* CLASS TYPE ***********
+
+public class Dice 
+{
+   
+   private int loBound, hiBound, myrandom;
+    
+    // constructor NO paramters
+  public Dice()
+  	{
+  	loBound = 1;
+  	hiBound = 6;
+  	}
+  // constructor With parameters
+   public Dice( int lo, int hi)
+   	{
+  	 loBound = lo;
+  	 hiBound = hi ;
+   	}
+  // get the Random Number
+  public int getRandom()
+   
+  	{
+     myrandom = loBound + (int)(Math.random() * (hiBound) );
+     return myrandom;
+  	}	
+}
+
