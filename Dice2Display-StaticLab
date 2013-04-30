@@ -1,0 +1,31 @@
+
+import javax.swing.JOptionPane;
+
+//*****  USING THE CASSS *************
+public class displaydice
+
+{
+public static void main ( String[] args)
+{
+   int diced1, diced2;
+  String answer="";  
+  do
+  {
+    
+  Dice2 myDice2 = new Dice2();	
+     
+   diced1= Dice2.Roll_1_Dice();
+   String  message1 = String.format("DICE STATIC %d",diced1  ); 
+      JOptionPane.showMessageDialog(null, message1); 
+  
+     diced2= myDice2.RollDice(3);
+    String  message2 = String.format("DICE NONE STATIC %d",diced2  ); 
+     JOptionPane.showMessageDialog(null, message2); 
+  
+ 
+    answer = JOptionPane.showInputDialog( null, "Would you like to play again? y/n");
+ 
+  } while (answer.equalsIgnoreCase("y"));
+  	
+}
+}
