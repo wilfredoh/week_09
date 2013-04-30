@@ -1,0 +1,30 @@
+
+
+public class Dice2 
+{
+        //static int  myrandom;
+      public static  int count;
+      public static  int RollCount;
+      public static int  lifeRoll;
+  	
+      public static int  RollDice2( int number, int max )
+   	{    
+  	int myrandom=0;
+  	for (int i = 0; i < number; i++ )
+  	  {
+
+  	    myrandom = myrandom + (1 + (int)(Math.random() * (max) ));
+  	    lifeRoll = lifeRoll + 1;
+  	   }
+  	   return myrandom; 
+   	   }
+
+   
+      public int RollCount()   
+  		{			
+  			return lifeRoll;		
+  		}
+      
+
+  	
+}
