@@ -1,0 +1,30 @@
+
+import javax.swing.JOptionPane;
+
+//*****  USING THE CASSS *************
+public class displaydice
+
+{
+public static void main ( String[] args)
+{
+   int dicevalue, count;
+  String answer="";  
+  do
+  {
+ 
+       Dice2 myCount = new Dice2();	
+
+  	 dicevalue= Dice2.RollDice2(2, 6);
+  	 
+  	 count = myCount.RollCount();
+  	 
+  	 String  message1 = String.format("Dice= %d, Count=%d ",dicevalue, count  ); 
+        JOptionPane.showMessageDialog(null, message1); 
+ 
+
+    answer = JOptionPane.showInputDialog( null, "Would you like to play again? y/n");
+ 
+  } while (answer.equalsIgnoreCase("y"));
+  	
+}
+}
