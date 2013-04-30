@@ -1,0 +1,29 @@
+public class Dice2 
+{
+        //static int  myrandom;
+  
+      // constructor NO paramters
+  	public static int  Roll_1_Dice()
+  		{
+  		int myramdomlocal=0;
+  		 return myramdomlocal = 1 + (int)(Math.random() * (6) );
+  		}
+  	// constructor With parameters
+  	
+  	
+  	
+  	public int  RollDice( int number  )
+  	 	{
+  	    
+  		int myrandom=0;
+  		for (int i = 1; i < number; i++ )
+  		  {
+
+  		    myrandom = myrandom + (1 + (int)(Math.random() * (6) ));
+  		   }
+  		   return myrandom;
+  	 	}
+
+
+   	
+}
